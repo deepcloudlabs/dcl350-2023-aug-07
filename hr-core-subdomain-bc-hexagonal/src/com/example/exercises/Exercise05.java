@@ -8,6 +8,7 @@ import com.example.hr.domain.FiatCurrency;
 import com.example.hr.domain.JobStyle;
 import com.example.hr.domain.TcKimlikNo;
 
+@SuppressWarnings("unused")
 public class Exercise05 {
 
 	public static void main(String[] args) {
