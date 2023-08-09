@@ -18,6 +18,7 @@ import com.example.hr.dto.request.HireEmployeeRequest;
 import com.example.hr.dto.response.EmployeeResponse;
 import com.example.hr.dto.response.HireEmployeeResponse;
 import com.example.hr.service.HrService;
+import com.example.validation.TcKimlikNo;
 
 @RestController
 @RequestMapping("/employees")
@@ -33,17 +34,19 @@ public class HrRestController {
 	}
 
 	@GetMapping("/{id}")
-	public EmployeeResponse findEmployeeByIdentity(@PathVariable("id") String identity) {
+	public EmployeeResponse findEmployeeByIdentity(
+			@PathVariable("id") @TcKimlikNo String identity) {
 		return hrService.findEmployeeByIdentity(identity);
 	}
 
 	@PostMapping
-	public HireEmployeeResponse hireEmployee(@RequestBody HireEmployeeRequest request) throws ExistingEmployeeException{
+	public HireEmployeeResponse hireEmployee(
+			@RequestBody @Validated HireEmployeeRequest request) throws ExistingEmployeeException{
 		return hrService.hireEmployee(request);
 	}
 
 	@DeleteMapping("/{id}")
-	public EmployeeResponse fireEmployee(@PathVariable("id") String identity) {
+	public EmployeeResponse fireEmployee(@PathVariable("id") @TcKimlikNo  String identity) {
 		return hrService.fireEmployee(identity);
 
 	}
