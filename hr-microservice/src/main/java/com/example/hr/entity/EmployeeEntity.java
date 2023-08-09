@@ -3,6 +3,7 @@ package com.example.hr.entity;
 import java.util.Set;
 
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -52,6 +53,7 @@ public class EmployeeEntity {
 	@Lob
 	@Column(columnDefinition = "longblob")
 	private byte[] photo;
+	@ElementCollection(targetClass = Department.class)
 	private Set<Department> departments;
 	@Enumerated(EnumType.STRING)
 	private JobStyle jobStyle;

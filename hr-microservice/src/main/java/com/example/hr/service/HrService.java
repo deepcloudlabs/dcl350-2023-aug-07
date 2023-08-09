@@ -38,6 +38,7 @@ public class HrService {
 	public EmployeeResponse fireEmployee(String identity) {
 		var firedEmployee = hrApplication.findEmployeeByIdentity(TcKimlikNo.valueOf(identity))
 				.orElseThrow(() -> new IllegalArgumentException("Employee does not exist!"));
+		hrApplication.fireEmployee(TcKimlikNo.valueOf(identity));
 		return modelMapper.map(firedEmployee, EmployeeResponse.class);
 	}
 
