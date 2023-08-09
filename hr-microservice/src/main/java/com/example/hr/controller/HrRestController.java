@@ -36,6 +36,7 @@ public class HrRestController {
 	@GetMapping("/{id}")
 	public EmployeeResponse findEmployeeByIdentity(
 			@PathVariable("id") @TcKimlikNo String identity) {
+		System.err.println(hrService.getClass().getName());
 		return hrService.findEmployeeByIdentity(identity);
 	}
 
@@ -50,4 +51,6 @@ public class HrRestController {
 		return hrService.fireEmployee(identity);
 
 	}
+	
+	
 }
