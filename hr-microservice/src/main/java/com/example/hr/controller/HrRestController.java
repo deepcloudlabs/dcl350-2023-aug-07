@@ -13,6 +13,7 @@ import org.springframework.web.context.annotation.RequestScope;
 
 import com.example.ddd.Adapter;
 import com.example.hr.application.HrApplication;
+import com.example.hr.application.business.ExistingEmployeeException;
 import com.example.hr.dto.request.HireEmployeeRequest;
 import com.example.hr.dto.response.EmployeeResponse;
 import com.example.hr.dto.response.HireEmployeeResponse;
@@ -37,7 +38,7 @@ public class HrRestController {
 	}
 
 	@PostMapping
-	public HireEmployeeResponse hireEmployee(@RequestBody HireEmployeeRequest request){
+	public HireEmployeeResponse hireEmployee(@RequestBody HireEmployeeRequest request) throws ExistingEmployeeException{
 		return hrService.hireEmployee(request);
 	}
 
