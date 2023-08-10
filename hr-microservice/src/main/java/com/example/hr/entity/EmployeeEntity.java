@@ -10,6 +10,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
+import javax.persistence.Version;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -57,4 +58,5 @@ public class EmployeeEntity {
 	private Set<Department> departments;
 	@Enumerated(EnumType.STRING)
 	private JobStyle jobStyle;
+
 }
