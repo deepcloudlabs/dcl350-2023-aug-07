@@ -1,9 +1,7 @@
 package com.example.hr.service;
 
 import org.modelmapper.ModelMapper;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.hr.application.HrApplication;
@@ -30,7 +28,7 @@ public class HrService {
 		return modelMapper.map(employee, EmployeeResponse.class);
 	}
 
-	@Transactional(propagation = Propagation.MANDATORY)
+	@Transactional
 	public HireEmployeeResponse hireEmployee(HireEmployeeRequest request) throws ExistingEmployeeException {
 		hrApplication.hireEmployee(modelMapper.map(request, Employee.class));
 		return new HireEmployeeResponse("success");
