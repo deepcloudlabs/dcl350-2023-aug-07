@@ -1,7 +1,6 @@
 package com.example.hr.client;
 
 import java.util.List;
-import java.util.Set;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -15,16 +14,12 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.client.RestTemplate;
 
-import com.example.hr.domain.Department;
-import com.example.hr.domain.FiatCurrency;
-import com.example.hr.domain.JobStyle;
-import com.example.hr.dto.request.HireEmployeeRequest;
-
 @SpringBootApplication
 @EnableEurekaClient
 @EnableDiscoveryClient
 @EnableScheduling
 @EnableFeignClients(basePackages = "com.example.hr.client.service")
+@SuppressWarnings("unused")
 public class HrClientMicroserviceApplication implements ApplicationRunner {
 	private static final String url = "http://%s:%d/hr/api/v1/employees";
 	private final DiscoveryClient discoveryClient;
