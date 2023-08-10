@@ -2,6 +2,8 @@ package com.example.world.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.ddd.Entity;
+@Entity(aggregate=true,identity="code")
 public class Country {
 	private String code;
 	private String name;
@@ -18,6 +20,10 @@ public class Country {
 	public Country() {
 	}
 
+	public void goc(City city, long addedPopulation) {
+		this.population += addedPopulation;
+		city.growPopulation(addedPopulation);
+	}
 	public Country(String code, String name, String continent, int population,
 			double surfaceArea, double gnp, int capital) {
 		this.code = code;

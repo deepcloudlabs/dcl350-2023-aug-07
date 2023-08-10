@@ -1,10 +1,14 @@
 package com.example.world.entity;
+
+import com.example.ddd.Entity;
+
+@Entity(aggregate=false,identity="id")
 public class City {
 	private int id;
 	private String name;
 	private int population;
 	private String countryCode;
-
+	
 	public City() {
 	}
 
@@ -12,7 +16,6 @@ public class City {
 		this.id = id;
 		this.name = name;
 		this.population = population;
-		this.countryCode = countryCode;
 	}
 
 	public int getId() {
@@ -39,13 +42,6 @@ public class City {
 		this.population = population;
 	}
 
-	public String getCountryCode() {
-		return countryCode;
-	}
-
-	public void setCountryCode(String countryCode) {
-		this.countryCode = countryCode;
-	}
 
 	@Override
 	public int hashCode() {
@@ -73,6 +69,15 @@ public class City {
 	public String toString() {
 		return "City [id=" + id + ", name=" + name + ", population="
 				+ population + ", countryCode=" + countryCode + "]";
+	}
+
+	public void growPopulation(long addedPopulation) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public String getCountryCode() {
+		return this.countryCode;
 	};
 
 }
