@@ -11,7 +11,7 @@ public class EmployeeFiredEvent extends HrEvent {
 		this.employee = employee;
 	}
 
-	public Employee employee() {
+	public Employee getEmployee() {
 		return employee;
 	}
 

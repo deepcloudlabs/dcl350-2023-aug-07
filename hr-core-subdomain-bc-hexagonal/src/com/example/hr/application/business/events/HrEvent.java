@@ -16,15 +16,15 @@ public abstract class HrEvent {
 		this.identity = identity;
 	}
 
-	public String uuid() {
+	public String getUuid() {
 		return uuid;
 	}
 
-	public ZonedDateTime createdAt() {
+	public ZonedDateTime getCreatedAt() {
 		return createdAt;
 	}
 
-	public TcKimlikNo identity() {
+	public TcKimlikNo getIdentity() {
 		return identity;
 	}
 
