@@ -3,7 +3,8 @@ package com.example;
 public class StudyThreads {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		var kernelThread = Thread.ofPlatform(); // parallel programming
+		var virtualThread = Thread.ofVirtual(); // network io
 
 	}
 
