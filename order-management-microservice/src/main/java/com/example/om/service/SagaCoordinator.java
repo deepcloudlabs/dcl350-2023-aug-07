@@ -94,7 +94,12 @@ public class SagaCoordinator {
 		});
 	}
 	
-
+	@Transactional
+	@KafkaListener(topics="order-inventory-instock-response")
+	public void listenInventoryInStockResponseMessage(String inventoryResponseMesssage) throws Exception { 
+        //reflection
+	}
+	
 	@Compansation(action=OrderAction.VALIDATE_PAYMENT)
 	public void cancelPayment(Order order) {
 		var cancelPayment= CancelPayment.builder()
